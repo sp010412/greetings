@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap');
+body {
+    background: #fff;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Original Surfer', cursive;
+    ;
+}
+
+.box {
+    border: solid;
+    border-radius: 10%;
+    height: 50vh;
+    background: grey;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 35%;
+}
+
+.nameSection {
+    padding-bottom: 20px;
+}
+
+.yep {
+    display: inline;
+    padding-bottom: 60px;
+}
+
+.radioClicks {
+    padding-bottom: 20px;
+}
+
+.buttonGreet {
+    padding-bottom: 10px;
+    border-radius: 1%;
+}
+
+.last {
+    padding-top: 25px;
+    text-align: center;
+    background: gray;
+    border: solid;
+    border-radius: 5px;
+    padding-bottom: 25px;
+}
+
+/*.displayedName{
+font-family: 'Original Surfer', cursive;
+}*/
+
+.greetMeBtn {
+    background-color: white;
+    color: black;
+    border: 2px solid red;
+    width: 30%;
+    height: 5vh;
+}
+
+.greetMeBtn {
+    transition-duration: 0.4s;
+}
+
+.greetMeBtn:hover {
+    background-color: red;
+    color: white;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.greetMeBtn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.greetMeBtn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.greetMeBtn:hover span {
+    padding-right: 25px;
+}
+
+.greetMeBtn:hover span:after {
+    opacity: 1;
+    right: 0;
+}
