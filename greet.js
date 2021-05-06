@@ -15,6 +15,8 @@ var displayedNameElem = document.querySelector('.displayedName')
 
 //add an event listener for when the 'greetMessage' button is pressed
 //greetMeBtnElem.addEventListener('click', greetMessage3);
+//retrive names from local storage
+
 var greetInsta = tools()
 
 function thebuttons1() {
@@ -30,7 +32,10 @@ function thebuttons1() {
 
         return displayedNameElem.innerHTML = 'Enter your name';
     } else {
+        greetInsta.storeNames(textNameElem.value)
         displayedNameElem.innerHTML = greetInsta.greet(checkedRadio.value, textNameElem.value);
+        counterElem.innerHTML = greetInsta.counter()
+   //set names  into localstorage.
     }
 }
 
