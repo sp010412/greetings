@@ -22,7 +22,7 @@ var greetInsta = tools()
 function thebuttons1() {
     var checkedRadio = document.querySelector("input[name='selectTypeRadio']:checked");
 
-    
+
     if (!checkedRadio && textNameElem.value === "") {
         return displayedNameElem.innerHTML = 'Enter your name and select a language!';
     } else if (!checkedRadio) {
@@ -35,10 +35,22 @@ function thebuttons1() {
         greetInsta.storeNames(textNameElem.value)
         displayedNameElem.innerHTML = greetInsta.greet(checkedRadio.value, textNameElem.value);
         counterElem.innerHTML = greetInsta.counter()
-   //set names  into localstorage.
+        //set names  into localstorage.
+    let key = greetInsta.getNames();
+   // let value = greetInsta.counter();
+    localStorage.setItem('name', key);
+    let myItem = localStorage.getItem(key);
     }
 }
-
-
 greetMeBtnElem.addEventListener('click', thebuttons1);
 
+
+console.log(localStorage)
+// greetMeBtnElem.addEventListener('click', function () {
+//     greetInsta.storeNames(nameList)
+//     nameList++;
+//     //store how many times a cat was spotted.
+//     localStorage['spotted'] = nameList;
+    
+// }
+// );
