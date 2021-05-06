@@ -19,18 +19,21 @@ var greetInsta = tools()
 
 function thebuttons1() {
     var checkedRadio = document.querySelector("input[name='selectTypeRadio']:checked");
-    if (checkedRadio) {
-        var selectL = checkedRadio.value;
-        //alert(selectL)
+
+    
+    if (!checkedRadio && textNameElem.value === "") {
+        return displayedNameElem.innerHTML = 'Enter your name and select a language!';
+    } else if (!checkedRadio) {
+
+        return displayedNameElem.innerHTML = 'Select a language!';
+    } if (textNameElem.value === "") {
+
+        return displayedNameElem.innerHTML = 'Enter your name';
     } else {
-        //    // alert()
-        return  displayedNameElem.innerHTML =  'Enter your name and select a language!';
-        
+        displayedNameElem.innerHTML = greetInsta.greet(checkedRadio.value, textNameElem.value);
     }
-
-    displayedNameElem.innerHTML = greetInsta.greet(selectL, textNameElem.value);
-
 }
+
 
 greetMeBtnElem.addEventListener('click', thebuttons1);
 
