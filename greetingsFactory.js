@@ -5,7 +5,7 @@ function tools(existingNames) {
     var nameList = existingNames || [];
 
     function storeNames(name) {
-        var name = name.charAt(0).toUpperCase() + name.slice(1)
+        var name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
         if (!nameList.includes(name)) {
             nameList.push(name);
         } else {
@@ -14,7 +14,7 @@ function tools(existingNames) {
     }
 
     function greet(selectL, name) {
-        name = name.charAt(0).toUpperCase() + name.slice(1)
+        name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
         if (selectL === "English") {
             return "Hi, " + name;
         }
