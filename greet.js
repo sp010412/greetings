@@ -34,6 +34,14 @@ if(localStorage['name']){
 var greetInsta = tools(names)
 counterElem.innerHTML = greetInsta.counter();
 
+resetBtnElem.addEventListener('click', function() {
+    localStorage.clear()
+    location.reload();
+}
+);
+
+
+
 function thebuttons1() {
     var checkedRadio = document.querySelector("input[name='selectTypeRadio']:checked");
 
