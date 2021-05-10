@@ -2,7 +2,7 @@
 var textNameElem = document.querySelector(".textName")
 //get reference to all radio buttons
 var checkedRadioBtn = document.querySelector('.selectTypeRadio1')
-var textNameElem = document.querySelector('.textName')
+//var textNameElem = document.querySelector('.textName')
 
 //get reference to greet button
 var greetMeBtnElem = document.querySelector('.greetMeBtn')
@@ -25,8 +25,8 @@ var displayedNameElem = document.querySelector('.displayedName')
 //console.log(localStorage.getItem('name').length)
 
 
-if(localStorage['name']){
-    var names= JSON.parse(localStorage.getItem('name'))
+if (localStorage['name']) {
+    var names = JSON.parse(localStorage.getItem('name'))
 }
 //console.log(names.length)
 //counterElem.innerHTML = names.length
@@ -34,7 +34,7 @@ if(localStorage['name']){
 var greetInsta = tools(names)
 counterElem.innerHTML = greetInsta.counter();
 
-resetBtnElem.addEventListener('click', function() {
+resetBtnElem.addEventListener('click', function () {
     localStorage.clear()
     location.reload();
 }
@@ -54,15 +54,14 @@ function thebuttons1() {
     } if (textNameElem.value === "") {
 
         return displayedNameElem.innerHTML = 'Enter your name';
-    } 
-    
+    }
+
     else {
         greetInsta.storeNames(textNameElem.value)
 
         displayedNameElem.innerHTML = greetInsta.greet(checkedRadio.value, textNameElem.value);
         // counterElem.innerHTML = greetInsta.counter()
         counterElem.innerHTML = greetInsta.counter();
-
 
         //set names  into localstorage.
         let key = greetInsta.getNames();
@@ -71,4 +70,5 @@ function thebuttons1() {
     }
 }
 greetMeBtnElem.addEventListener('click', thebuttons1);
+
 
