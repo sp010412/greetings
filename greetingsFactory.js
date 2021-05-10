@@ -5,9 +5,9 @@ function tools(existingNames) {
     var nameList = existingNames || [];
 
     function storeNames(name) {
-        name = name.charAt(0).toUpperCase() + name.slice(1)
+        var name = name.charAt(0).toUpperCase() + name.slice(1)
         if (!nameList.includes(name)) {
-            return nameList.push(name)
+            nameList.push(name);
         } else {
             return
         }
@@ -31,17 +31,10 @@ function tools(existingNames) {
         return nameList.length
     }
 
+
+
     function getNames() {
         return nameList
-    }
-    function backZero(name) {
-        if (nameList[name] === undefined) {
-            greetingsCounter++;
-            //add an entry for the user that was greeted in the Object Map
-            namesGreeted[userName] = 0;
-            //update the DOM to display the counter
-            greetingsElem.innerHTML = greetingsCounter;
-        }
     }
 
 
@@ -54,3 +47,4 @@ function tools(existingNames) {
     }
 
 }
+

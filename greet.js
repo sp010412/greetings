@@ -23,8 +23,11 @@ var displayedNameElem = document.querySelector('.displayedName')
 //let key = greetInsta.getNames();
 //localStorage.getItem(JSON.parse(key));
 //console.log(localStorage.getItem('name').length)
-var local = localStorage.getItem('name');
-var names= JSON.parse(local)
+
+
+if(localStorage['name']){
+    var names= JSON.parse(localStorage.getItem('name'))
+}
 //console.log(names.length)
 //counterElem.innerHTML = names.length
 
@@ -43,8 +46,11 @@ function thebuttons1() {
     } if (textNameElem.value === "") {
 
         return displayedNameElem.innerHTML = 'Enter your name';
-    } else {
+    } 
+    
+    else {
         greetInsta.storeNames(textNameElem.value)
+
         displayedNameElem.innerHTML = greetInsta.greet(checkedRadio.value, textNameElem.value);
         // counterElem.innerHTML = greetInsta.counter()
         counterElem.innerHTML = greetInsta.counter();
@@ -58,9 +64,3 @@ function thebuttons1() {
 }
 greetMeBtnElem.addEventListener('click', thebuttons1);
 
-
-// function duplicate() {
-//     if (textNameElem.value > 2) {
-//         return greetInsta.counter()--
-//     }
-// }
