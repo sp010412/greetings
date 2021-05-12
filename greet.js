@@ -45,17 +45,22 @@ resetBtnElem.addEventListener('click', function () {
 
 function thebuttons1() {
     var checkedRadio = document.querySelector("input[name='selectTypeRadio']:checked");
+    const regex = /[a-zA-Z]$/g;
 
 
-    if (!checkedRadio && textNameElem.value === "") {
-        return displayedNameElem.innerHTML = 'Enter your name and select a language!';
-    } else if (!checkedRadio) {
 
-        return displayedNameElem.innerHTML = 'Select a language!';
-    } if (textNameElem.value === "") {
+        if (!checkedRadio && textNameElem.value === "") {
+            return displayedNameElem.innerHTML = 'Enter your name and select a language!';
+        } else if (!checkedRadio) {
 
-        return displayedNameElem.innerHTML = 'Enter your name';
-    }
+            return displayedNameElem.innerHTML = 'Select a language!';
+        } if (textNameElem.value === "") {
+
+            return displayedNameElem.innerHTML = 'Enter your name';
+        }
+        if (!regex.test(textNameElem.value)) {
+            return displayedNameElem.innerHTML = 'No numbers';
+        }
 
     else {
         greetInsta.storeNames(textNameElem.value)
