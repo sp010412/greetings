@@ -24,6 +24,7 @@ var displayedNameElem = document.querySelector('.displayedName')
 //localStorage.getItem(JSON.parse(key));
 //console.log(localStorage.getItem('name').length)
 
+var names = []
 
 if (localStorage['name']) {
     var names = JSON.parse(localStorage.getItem('name'))
