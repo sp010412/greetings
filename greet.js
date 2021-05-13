@@ -42,28 +42,29 @@ resetBtnElem.addEventListener('click', function () {
 );
 
 
-
 function thebuttons1() {
     var checkedRadio = document.querySelector("input[name='selectTypeRadio']:checked");
     const regex = /[a-zA-Z]$/g;
 
-
-
-        if (!checkedRadio && textNameElem.value === "") {
-            return displayedNameElem.innerHTML = 'Enter your name and select a language!';
-        } else if (!checkedRadio) {
-
-            return displayedNameElem.innerHTML = 'Select a language!';
-        } if (textNameElem.value === "") {
-
-            return displayedNameElem.innerHTML = 'Enter your name';
-        }
-        if (!regex.test(textNameElem.value)) {
-            return displayedNameElem.innerHTML = 'No numbers';
-        }
+    if (!checkedRadio && textNameElem.value === "") {
+        displayedNameElem.classList.add("red");
+        return displayedNameElem.innerHTML = 'Enter your name and select a language!';
+    } else if (!checkedRadio) {
+        displayedNameElem.classList.add("red");
+        return displayedNameElem.innerHTML = 'Select a language!';
+    } if (textNameElem.value === "") {
+        displayedNameElem.classList.add("red");
+        return displayedNameElem.innerHTML = 'Enter your name!';
+    }
+    if (!regex.test(textNameElem.value)) {
+        displayedNameElem.classList.add("red");
+        return displayedNameElem.innerHTML = 'Only enter letters eg.John';
+    }
+    
 
     else {
         greetInsta.storeNames(textNameElem.value)
+        displayedNameElem.classList.remove("red");
 
         displayedNameElem.innerHTML = greetInsta.greet(checkedRadio.value, textNameElem.value);
         // counterElem.innerHTML = greetInsta.counter()
@@ -74,6 +75,7 @@ function thebuttons1() {
         // let value = greetInsta.counter();
         localStorage.setItem('name', JSON.stringify(key));
     }
+
 }
 greetMeBtnElem.addEventListener('click', thebuttons1);
 
