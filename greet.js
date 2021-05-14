@@ -13,16 +13,9 @@ var resetBtnElem = document.querySelector('.resetBtn')
 var counterElem = document.querySelector('.counter')
 //get reference to message desplay
 var displayedNameElem = document.querySelector('.displayedName')
-//var radioAddBtn= document.querySelector('.selectTypeRadio')
-
 
 
 //add an event listener for when the 'greetMessage' button is pressed
-//greetMeBtnElem.addEventListener('click', greetMessage3);
-//retrive names from local storage
-//let key = greetInsta.getNames();
-//localStorage.getItem(JSON.parse(key));
-//console.log(localStorage.getItem('name').length)
 
 var names = []
 
@@ -76,7 +69,10 @@ function thebuttons1() {
 
     }
     textNameElem.value = ""
-    checkedRadio = document.querySelector("input[name='selectTypeRadio']").checked = false
+    checkedRadio = document.getElementById("clearOut1").checked = false
+    checkedRadio = document.getElementById("clearOut2").checked = false
+    checkedRadio = document.getElementById("clearOut3").checked = false
+
 }
 greetMeBtnElem.addEventListener('click', thebuttons1);
 
