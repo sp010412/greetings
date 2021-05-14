@@ -41,7 +41,6 @@ resetBtnElem.addEventListener('click', function () {
 }
 );
 
-
 function thebuttons1() {
     var checkedRadio = document.querySelector("input[name='selectTypeRadio']:checked");
     const regex = /[a-zA-Z]$/g;
@@ -60,7 +59,7 @@ function thebuttons1() {
         displayedNameElem.classList.add("red");
         return displayedNameElem.innerHTML = 'Only enter letters eg.John';
     }
-    
+
 
     else {
         greetInsta.storeNames(textNameElem.value)
@@ -74,9 +73,10 @@ function thebuttons1() {
         let key = greetInsta.getNames();
         // let value = greetInsta.counter();
         localStorage.setItem('name', JSON.stringify(key));
-    }
 
+    }
+    textNameElem.value = ""
+    checkedRadio = document.querySelector("input[name='selectTypeRadio']").checked = false
 }
 greetMeBtnElem.addEventListener('click', thebuttons1);
-
 
