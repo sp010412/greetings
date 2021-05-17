@@ -10,6 +10,7 @@ h1 {
     ;
 }
 
+
 .box {
     border: solid;
     border-radius: 10%;
@@ -33,12 +34,12 @@ h1 {
 }
 
 .yep {
-    display: inline;
-    padding-bottom: 60px;
+    display: inline-flex
 }
 
+
 .radioClicks {
-    padding-bottom: 20px;
+    padding-: 20px;
     text-align: center;
 }
 
@@ -109,6 +110,11 @@ font-family: 'Original Surfer', cursive;
 
 .buttonGreet {
     text-align: center;
+}
+
+.counter {
+padding-top: 22px;
+padding-left: 10px;
 }
 
 @media (max-width:1024px) {
